@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal Test — Simple Test Workflow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="console">
+    <header class="console__header">
+      <span class="eyebrow">Signal test</span>
+      <h1 class="workflow-name">Simple Test Workflow</h1>
+    </header>
+
+    <section class="scope">
+      <div class="scope__grid"></div>
+      <div class="scope__baseline"></div>
+      <div class="trace-dot" id="traceDot"></div>
+      <div class="spike-mark" id="spikeMark"></div>
+    </section>
+
+    <div class="control">
+      <button class="ping-button" id="pingButton" type="button">
+        <span id="pingButtonLabel">Send ping</span>
+      </button>
+      <p class="control__hint">
+        Targets <code>localhost:5678/webhook/simple-test</code>
+      </p>
+    </div>
+
+    <section class="readout" aria-live="polite">
+      <div class="readout__title">Readout</div>
+      <dl class="readout__grid">
+        <div class="readout__row">
+          <dt>Message</dt>
+          <dd id="fieldMessage">—</dd>
+        </div>
+        <div class="readout__row">
+          <dt>Timestamp</dt>
+          <dd id="fieldTimestamp">—</dd>
+        </div>
+        <div class="readout__row">
+          <dt>Status</dt>
+          <dd id="fieldStatus">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="statusText">Nothing sent yet</span>
+          </dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
